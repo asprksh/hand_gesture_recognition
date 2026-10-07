@@ -8,7 +8,7 @@ from torchvision import transforms
 import os
 import gdown
 
-st.set_page_config(page_title="Live Hand Gesture Recognition")
+st.set_page_config(page_title="Live Infrared Hand Gesture Recognition")
 
 st.title("Hand Gesture Recognition")
 st.write("Take a picture of your hand gesture.")
