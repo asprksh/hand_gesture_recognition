@@ -116,7 +116,7 @@ MODEL_PATH = "hand_gesture_cnn.pth"
 @st.cache_resource
 def load_model():
 
-    # Agar model file present nahi hai to Google Drive se download karo
+    
     if not os.path.exists(MODEL_PATH):
         url = "https://drive.google.com/uc?id=1WVV-wdmi2bsGsm1q8t2svx06S-Piqx6M"
         gdown.download(url, MODEL_PATH, quiet=False)
