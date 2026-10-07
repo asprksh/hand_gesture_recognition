@@ -11,7 +11,7 @@ import gdown
 st.set_page_config(page_title="Live Infrared Hand Gesture Recognition")
 
 st.title("Hand Gesture Recognition")
-st.write("Take a picture of your hand gesture.")
+st.write("Take a Infrared picture of your hand gesture.")
 
 # -----------------------------
 # Labels
