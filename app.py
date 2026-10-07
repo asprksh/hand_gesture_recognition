@@ -13,10 +13,6 @@ st.set_page_config(page_title="Live Infrared Hand Gesture Recognition")
 st.title("Hand Gesture Recognition")
 st.write("Take a Infrared picture of your hand gesture.")
 
-# -----------------------------
-# Labels
-# -----------------------------
-
 gesture_to_label = {
     "01_palm": 0,
     "02_l": 1,
@@ -32,10 +28,6 @@ gesture_to_label = {
 
 label_to_gesture = {v: k for k, v in gesture_to_label.items()}
 
-# -----------------------------
-# Transform
-# -----------------------------
-
 transform = transforms.Compose([
             transforms.Resize((128,128)),
             transforms.ToTensor(),
@@ -43,18 +35,10 @@ transform = transforms.Compose([
 
 ])
 
-# -----------------------------
-# Device
-# -----------------------------
-
 device = torch.device(
     "cuda" if torch.cuda.is_available()
     else "cpu"
 )
-
-# -----------------------------
-# CNN
-# -----------------------------
 
 class GestureCNN(nn.Module):
 
@@ -106,11 +90,6 @@ class GestureCNN(nn.Module):
 
         return x
         
-
-# -----------------------------
-# Load model
-# -----------------------------
-
 MODEL_PATH = "hand_gesture_cnn.pth"
 
 @st.cache_resource
@@ -136,10 +115,6 @@ def load_model():
 
 
 model = load_model()
-
-# -----------------------------
-# Prediction
-# -----------------------------
 
 def predict(image):
 
